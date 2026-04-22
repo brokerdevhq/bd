@@ -4,6 +4,7 @@
 **/.cpcache
 **/.DS_Store
 **/.gradle
+.direnv/
 
 # User-specific stuff
 .idea/**/workspace.xml
