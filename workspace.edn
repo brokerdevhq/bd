@@ -1,4 +1,4 @@
-{:top-namespace "ca.brokerdev"
+{:top-namespace "ca.brokerdev.core"
  :interface-ns "interface"
  :default-profile-name "default"
  :dialects ["clj"]
