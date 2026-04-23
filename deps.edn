@@ -1,12 +1,24 @@
 {:aliases  {:dev {:extra-paths ["development/src"]
 
                   :extra-deps {org.clojure/clojure {:mvn/version "1.12.2"}
+
+                               ; bases
+                               brokerdev/api                  {:local/root "bases/api"}
                                
                                ; components
+                               brokerdev/config               {:local/root "components/aero"}
+                               brokerdev/http-client          {:local/root "components/clj-http"}
+                               brokerdev/http-server          {:local/root "components/http-server"}
+                               brokerdev/lifecyle             {:local/root "components/integrant"}
+                               brokerdev/log                  {:local/root "components/timbre"}
                                brokerdev/schema               {:local/root "components/schema"}
+
                                }}
 
-            :test {:extra-paths [; components
+            :test {:extra-paths [; bases
+                                 "bases/api/test"
+                                 
+                                 ; components
                                  "components/schema/test"
                                  ]}
 
