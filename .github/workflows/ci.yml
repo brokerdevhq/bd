@@ -21,8 +21,8 @@ jobs:
       - name: Run poly check
         run: nix-shell --run "poly check"
 
-  poly-test:
-    name: Polylith Test
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,5 +32,5 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-unstable
 
-      - name: Run poly test
-        run: nix-shell --run "poly test"
+      - name: Run tests
+        run: nix-shell --run "bb test"

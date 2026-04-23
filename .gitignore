@@ -30,6 +30,15 @@ projects/**/pom.xml
 # nrepl
 .nrepl-port
 
+# Node.js
+node_modules/
+
+# shadow-cljs
+.shadow-cljs/
+**/resources/dev/public/js/
+**/resources/public/js/
+out/
+
 # clojure-lsp
 **/.lsp/.cache
 

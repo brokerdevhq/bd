@@ -2,10 +2,11 @@
 
 pkgs.mkShell {
   buildInputs = with pkgs; [
-    openjdk25
-    clojure
     babashka
-    polylith
+    clojure
     gh
+    nodejs
+    openjdk25
+    polylith
   ];
 }

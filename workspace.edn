@@ -1,7 +1,7 @@
 {:top-namespace "ca.brokerdev.core"
  :interface-ns "interface"
  :default-profile-name "default"
- :dialects ["clj"]
+ :dialects ["clj" "cljs"]
  :compact-views #{}
  :vcs {:name "git"
        :auto-add false}

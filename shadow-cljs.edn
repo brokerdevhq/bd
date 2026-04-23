@@ -1,0 +1,15 @@
+{:deps true
+ :dev-http {3000 ["bases/spa/resources/public" "classpath:public"]
+            9000 ["bases/spa/resources/dev/public" "classpath:public"]}
+ :builds {:spa
+          {:target :browser
+           :output-dir "bases/spa/resources/public/js"
+           :modules {:main {:init-fn ca.brokerdev.core.spa.core/init}}}
+          :portfolio
+          {:target :browser
+           :output-dir "bases/spa/resources/dev/public/js"
+           :asset-path "/js"
+           :modules {:main {:init-fn ca.brokerdev.core.spa.portfolio/init}}}
+          :test {:target :node-test
+                 :output-to "out/test/tests.js"
+                 :ns-regexp ".*test.*"}}}
