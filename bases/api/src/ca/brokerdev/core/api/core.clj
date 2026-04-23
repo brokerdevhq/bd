@@ -4,7 +4,6 @@
     [ca.brokerdev.core.lifecycle.interface :as lifecycle]
     [ca.brokerdev.core.log.interface :as log]
     [ca.brokerdev.core.api.lifecycle.load]
-    [clojure.tools.cli :refer [parse-opts]]
     [clojure.string :as str])
   (:gen-class))
 
@@ -28,9 +27,9 @@
   (lifecycle/stop! system))
 
 (defn -main [& args]
-  (let [{:keys [options errors help]} (parse-opts args cli-options)]
+  (let [{:keys [options errors help]} (config/parse-opts args cli-options)]
     (cond
-      help (do (println "Usage: eb-api [options]") (System/exit 0))
+      help (do (println "Usage: api [options]") (System/exit 0))
       errors (do (log/error errors)
                  (System/exit 1))
       :else (start! (:profile options)))))

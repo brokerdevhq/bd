@@ -22,3 +22,6 @@
   (if-let [res (io/resource resource-path)]
     (aero/read-config res opts)
     (throw (ex-info "Configuration resource not found" {:path resource-path}))))  
+
+(defn parse-opts [args cli-options]
+  (c/parse-opts args cli-options))
