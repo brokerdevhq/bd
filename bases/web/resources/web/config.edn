@@ -1,0 +1,6 @@
+{
+ :web/http-server {:handler #lifecycle/ref :web/handler
+                   :port #profile {:default #long #or [#env PORT 8001]
+                                   :test #long #lifecycle/random :port}}
+ :web/handler {}
+ }

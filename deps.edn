@@ -4,6 +4,7 @@
 
                                ; bases
                                brokerdev/api                  {:local/root "bases/api"}
+                               brokerdev/web                  {:local/root "bases/web"}
                                
                                ; components
                                brokerdev/config               {:local/root "components/config"}
@@ -17,6 +18,7 @@
 
             :test {:extra-paths [; bases
                                  "bases/api/test"
+                                 "bases/web/test"
                                  
                                  ; components
                                  "components/schema/test"
