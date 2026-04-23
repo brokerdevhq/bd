@@ -1,9 +1,10 @@
-{:aliases  {:dev {:extra-paths ["development/src"]
+{:aliases  {:dev {:extra-paths ["development/src" "dev-resources"]
 
                   :extra-deps {org.clojure/clojure {:mvn/version "1.12.2"}
 
                                ; bases
                                brokerdev/api                  {:local/root "bases/api"}
+                               brokerdev/spa                  {:local/root "bases/spa"}
                                brokerdev/web                  {:local/root "bases/web"}
                                
                                ; components
@@ -16,8 +17,12 @@
 
                                }}
 
+            :cljs {:extra-deps { thheller/shadow-cljs {:mvn/version "3.3.6"} }
+                   :main-opts ["-m" "shadow.cljs.devtools.cli"]}
+
             :test {:extra-paths [; bases
                                  "bases/api/test"
+                                 "bases/spa/test"
                                  "bases/web/test"
                                  
                                  ; components

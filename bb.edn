@@ -1,0 +1,16 @@
+{:tasks
+ {:requires ([babashka.process :as p])
+
+  test:clj {:doc "Run Clojure tests via Polylith. Args passed to poly test."
+            :task 
+            (do (println "Running JVM Tests:")
+                (apply p/shell "poly" "test" *command-line-args*))}
+
+  test:cljs {:doc "Run ClojureScript tests via shadow-cljs"
+             :task (do
+                     (println "Running NODE Tests:")
+                     (p/shell "clj" "-M:dev:test:cljs" "compile" "test")
+                     (p/shell "node" "out/test/tests.js"))}
+
+  test {:doc "Run all tests (Clojure + ClojureScript)"
+        :depends [test:clj test:cljs]}}}
