@@ -6,7 +6,7 @@
                                brokerdev/api                  {:local/root "bases/api"}
                                
                                ; components
-                               brokerdev/config               {:local/root "components/aero"}
+                               brokerdev/config               {:local/root "components/config"}
                                brokerdev/http-client          {:local/root "components/clj-http"}
                                brokerdev/http-server          {:local/root "components/http-server"}
                                brokerdev/lifecyle             {:local/root "components/integrant"}
