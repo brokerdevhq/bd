@@ -21,11 +21,10 @@
    :body    {:error "Custom not found"}})
 
 (def routes 
-  [["/"      {:name ::home  :get  {:handler home-hanlder}}]])
+  [["/"         {:name ::home  :get  {:handler home-hanlder}}]])
 
 (defmethod lifecycle/init-key :web/handler [_ system]
   (http-server/build-handler (assoc system
                                     :routes routes
                                     :not-found not-found
-                                    :resources ["web/public"]
-                                    )))
+                                    :resources "web/public")))
