@@ -1,12 +1,13 @@
 (ns ca.brokerdev.core.http-server.handler
-  (:require [reitit.ring :as rr]
+  (:require [muuntaja.core :as m]
+            [reitit.coercion.malli :as malli]
             [reitit.ring.coercion :as coercion]
             [reitit.ring.middleware.muuntaja :as muuntaja]
             [reitit.ring.middleware.parameters :as parameters]
-            [reitit.coercion.malli :as malli]
-            [muuntaja.core :as m]
             [ring.middleware.cors :refer [wrap-cors]]
-            [ring.middleware.resource :refer [wrap-resource]]))
+            [ring.middleware.resource :refer [wrap-resource]]
+            [reitit.ring :as rr]
+            ))
 
 (defn- health [_req]
   {:status  200
@@ -28,7 +29,7 @@
         origins))
 
 (defn build [{:keys [routes resources not-found cors-origins] :as system}]
-  (let [route-table (conj [["/health"      {:name ::health  :get  {:handler health}}]]
+  (let [route-table (conj [["/health" {:name ::health  :get  {:handler health}}]]
                           routes)]
     (cond-> (rr/ring-handler
               (rr/router route-table
