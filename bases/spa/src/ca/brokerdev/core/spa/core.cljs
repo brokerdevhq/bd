@@ -3,4 +3,4 @@
 
 (defn ^:dev/after-load init []
   (d/render (js/document.getElementById "app")
-            [:h1 "Hello Spa!"]))
+            [:h1 "Hello Spa!!!!"]))
