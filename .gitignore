@@ -35,8 +35,8 @@ node_modules/
 
 # shadow-cljs
 .shadow-cljs/
-**/resources/dev/public/js/
 **/resources/public/js/
+**/resources/**/public/**/js/
 out/
 
 # clojure-lsp
