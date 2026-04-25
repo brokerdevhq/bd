@@ -5,6 +5,12 @@
           {:target :browser
            :output-dir "bases/spa/resources/public/js"
            :modules {:main {:init-fn ca.brokerdev.core.spa.core/init}}}
+          :release
+          {:target :browser
+           :output-dir "bases/web/resources/web/public/app/js"
+           :asset-path "/app/js"
+           :modules {:main {:init-fn ca.brokerdev.core.spa.core/init}}
+           :compiler-options {:optimizations :advanced}}
           :portfolio
           {:target :browser
            :output-dir "bases/spa/resources/dev/public/js"
