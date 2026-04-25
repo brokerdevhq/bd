@@ -1,0 +1,14 @@
+{:deps {org.clojure/clojure {:mvn/version "1.12.2"}
+        ; bases
+        brokerdev/web                  {:local/root "../../bases/web"}
+
+        ; components
+        brokerdev/config               {:local/root "../../components/config"}
+        brokerdev/lifecyle             {:local/root "../../components/integrant"}
+        brokerdev/log                  {:local/root "../../components/timbre"}
+        brokerdev/http-server          {:local/root "../../components/http-server"}
+        }
+
+ :aliases {:test {:extra-paths []
+                  :extra-deps  {brokerdev/http-client {:local/root "../../components/clj-http"}}}
+           :uberjar {:main ca.brokerdev.core.web.core}}}
